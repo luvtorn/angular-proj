@@ -1,0 +1,56 @@
+<div class="container col-4 mt-4">
+  <h3>Rejestracja</h3>
+
+  <form #f="ngForm" (ngSubmit)="register()" novalidate>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        class="form-control"
+        required
+        [(ngModel)]="email"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="password" class="form-label">Hasło</label>
+      <input
+        id="password"
+        name="password"
+        type="password"
+        class="form-control"
+        required
+        minlength="6"
+        [(ngModel)]="password"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="confirmPassword" class="form-label">Powtórz hasło</label>
+      <input
+        id="confirmPassword"
+        name="confirmPassword"
+        type="password"
+        class="form-control"
+        required
+        [(ngModel)]="confirmPassword"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="firstName" class="form-label">Imię</label>
+      <input id="firstName" name="firstName" class="form-control" [(ngModel)]="firstName" />
+    </div>
+
+    <div class="mb-3">
+      <label for="lastName" class="form-label">Nazwisko</label>
+      <input id="lastName" name="lastName" class="form-control" [(ngModel)]="lastName" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Zarejestruj</button>
+  </form>
+
+  <p class="text-danger mt-2">{{ message }}</p>
+</div>

@@ -1,0 +1,179 @@
+<div class="container py-4">
+	<div class="row">
+		<!-- Sidebar -->
+		<aside class="col-md-3 mb-3">
+			<div class="card">
+				<div class="card-body text-center">
+					<img src="https://via.placeholder.com/80" class="rounded-circle mb-2" alt="User">
+					<h5 class="card-title mb-0">{{ user.firstName }}</h5>
+					<hr>
+					<nav class="nav flex-column text-center">
+						<a class="nav-link px-0" href="#/dashboard">Overview</a>
+						<a class="nav-link px-0" href="#/dashboard/reports">Reports</a>
+						<a class="nav-link px-0" href="#/dashboard/settings">Settings</a>
+						<button class="nav-link px-0 text-danger" (click)="logout()">Logout</button>
+					</nav>
+				</div>
+			</div>
+		</aside>
+
+		<!-- Main content -->
+		<main class="col-md-9">
+			<!-- Top stat cards -->
+			<div class="row g-3 mb-3">
+				<div class="col-sm-6 col-lg-3">
+					<div class="card shadow-sm">
+						<div class="card-body d-flex align-items-center">
+							<div class="me-3 bg-primary text-white rounded-3 p-2">
+								<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-people" viewBox="0 0 16 16">
+									<path d="M13 7c0 1.105-.672 2-1.5 2S10 8.105 10 7s.672-2 1.5-2S13 5.895 13 7z"/>
+									<path fill-rule="evenodd" d="M8 8a3 3 0 100-6 3 3 0 000 6zM2 13s-1 0-1-1 1-4 7-4 7 3 7 4-1 1-1 1H2z"/>
+								</svg>
+							</div>
+							<div>
+								<h6 class="mb-0">Users</h6>
+								<small class="text-muted">1,243</small>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-lg-3">
+					<div class="card shadow-sm">
+						<div class="card-body d-flex align-items-center">
+							<div class="me-3 bg-success text-white rounded-3 p-2">
+								<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+									<path d="M0 1a1 1 0 011-1h1.11a1 1 0 01.98.804L3.89 3H14a1 1 0 01.97 1.243l-1.5 6A1 1 0 0112.5 11H5.11l-.4 2H14v1H3a1 1 0 01-.98-.804L.61 2H0V1z"/>
+								</svg>
+							</div>
+							<div>
+								<h6 class="mb-0">Orders</h6>
+								<small class="text-muted">264</small>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-lg-3">
+					<div class="card shadow-sm">
+						<div class="card-body d-flex align-items-center">
+							<div class="me-3 bg-warning text-dark rounded-3 p-2">
+								<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-currency-dollar" viewBox="0 0 16 16">
+									<path d="M8 1a1 1 0 00-1 1v1.07A3.001 3.001 0 005 6c0 1.486 1.01 2.717 2.4 2.964V11H6v1h4v-1H8.6v-2.036A3.001 3.001 0 0011 6a3 3 0 00-3-3V2a1 1 0 00-1-1z"/>
+								</svg>
+							</div>
+							<div>
+								<h6 class="mb-0">Revenue</h6>
+								<small class="text-muted">$12,340</small>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-lg-3">
+					<div class="card shadow-sm">
+						<div class="card-body d-flex align-items-center">
+							<div class="me-3 bg-info text-white rounded-3 p-2">
+								<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-graph-up" viewBox="0 0 16 16">
+									<path fill-rule="evenodd" d="M0 0h1v15h15v1H0V0z"/>
+									<path d="M10 5.5a.5.5 0 01.5-.5h1.086l-2.939 5.879a.5.5 0 01-.84.073L6 9.105 3.854 11.25a.5.5 0 11-.708-.708L5.293 8.34l2.146-2.146a.5.5 0 01.707 0L11.5 9.5V5.5z"/>
+								</svg>
+							</div>
+							<div>
+								<h6 class="mb-0">Growth</h6>
+								<small class="text-muted">+8.4%</small>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row g-3">
+				<div class="col-lg-8">
+					<div class="card h-100">
+						<div class="card-header d-flex justify-content-between align-items-center">
+							<h6 class="mb-0">Sales Overview</h6>
+							<div class="btn-group btn-group-sm" role="group" aria-label="range">
+								<button class="btn btn-outline-secondary">Day</button>
+								<button class="btn btn-outline-secondary active">Week</button>
+								<button class="btn btn-outline-secondary">Month</button>
+							</div>
+						</div>
+						<div class="card-body">
+						
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4">
+					<div class="card mb-3">
+						<div class="card-header">
+							<h6 class="mb-0">Recent Activity</h6>
+						</div>
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item">
+								<div class="d-flex justify-content-between">
+									<div>
+										<strong>Anna</strong>
+										<div class="small text-muted">Created a new report</div>
+									</div>
+									<div class="small text-muted">2h ago</div>
+								</div>
+							</li>
+							<li class="list-group-item">
+								<div class="d-flex justify-content-between">
+									<div>
+										<strong>System</strong>
+										<div class="small text-muted">Backup completed</div>
+									</div>
+									<div class="small text-muted">5h ago</div>
+								</div>
+							</li>
+							<li class="list-group-item">
+								<div class="d-flex justify-content-between">
+									<div>
+										<strong>John</strong>
+										<div class="small text-muted">New user signup</div>
+									</div>
+									<div class="small text-muted">1d ago</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+					<div class="card">
+						<div class="card-header">
+							<h6 class="mb-0">Top Products</h6>
+						</div>
+						<div class="card-body p-0">
+							<table class="table mb-0 table-sm">
+								<thead class="table-light">
+									<tr>
+										<th>Product</th>
+										<th class="text-end">Sales</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Pro Plan</td>
+										<td class="text-end">430</td>
+									</tr>
+									<tr>
+										<td>Starter</td>
+										<td class="text-end">210</td>
+									</tr>
+									<tr>
+										<td>Enterprise</td>
+										<td class="text-end">120</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	</div>
+</div>
+
+

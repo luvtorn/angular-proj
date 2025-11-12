@@ -1,0 +1,83 @@
+<!-- About Me - Bootstrap 5 fragment
+     Make sure Bootstrap CSS is included globally (e.g. in src/index.html)
+-->
+
+<div class="container py-4">
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+      <div class="card mb-4 shadow-sm">
+        <div class="card-body">
+          <div class="row align-items-center">
+            <div class="col-md-3 text-center">
+              <h5 class="mb-0">{{user.firstName}}</h5>
+              <p class="text-muted small">Frontend Developer</p>
+              <a href="#/contact" class="btn btn-sm btn-outline-primary mt-2">Contact</a>
+            </div>
+
+            <div class="col-md-9">
+              <h4>About Me</h4>
+              <p class="text-muted">I build beautiful, accessible user interfaces and small web applications. I enjoy working with modern frameworks, writing clean code, and turning ideas into delightful user experiences.</p>
+
+              <div class="row mt-3">
+                <div class="col-sm-6">
+                  <h6 class="mb-2">Key info</h6>
+                  <ul class="list-unstyled small text-muted">
+                    <li><strong>Location:</strong> Remote / City, Country</li>
+                    <li><strong>Experience:</strong> 5+ years</li>
+                    <li><strong>Availability:</strong> Open to freelance</li>
+                  </ul>
+                </div>
+
+                <div class="col-sm-6">
+                  <h6 class="mb-2">Contact</h6>
+                  <p class="small mb-1"><strong>Email:</strong> <a href="mailto:{{user.email}}">{{user.email}}</a></p>
+                </div>
+              </div>
+
+              <hr>
+
+              <h6>Skills</h6>
+              <div class="mb-2">
+                <span class="badge bg-primary me-1 mb-1">Angular</span>
+                <span class="badge bg-secondary me-1 mb-1">TypeScript</span>
+                <span class="badge bg-success me-1 mb-1">HTML & CSS</span>
+                <span class="badge bg-info text-dark me-1 mb-1">Bootstrap</span>
+                <span class="badge bg-warning text-dark me-1 mb-1">RxJS</span>
+              </div>
+
+              <div class="mt-3">
+                <h6>Recent Work</h6>
+                <div class="list-group list-group-flush">
+                  <a href="#" class="list-group-item list-group-item-action p-2">Project A — Dashboard UI and charts</a>
+                  <a href="#" class="list-group-item list-group-item-action p-2">Project B — E-commerce frontend</a>
+                  <a href="#" class="list-group-item list-group-item-action p-2">Project C — Internal tools</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card mb-3">
+            <div class="card-body">
+              <h6 class="card-title">Education</h6>
+              <p class="small text-muted mb-0">B.Sc. in Computer Science — University Name (2015-2019)</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card mb-3">
+            <div class="card-body">
+              <h6 class="card-title">Interests</h6>
+              <p class="small text-muted mb-0">Open source, UI/UX, running, photography</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

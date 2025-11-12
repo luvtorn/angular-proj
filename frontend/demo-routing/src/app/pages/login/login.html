@@ -1,0 +1,29 @@
+<form class="container col-4 mt-4" (ngSubmit)="login()" #f="ngForm" novalidate>
+  <h2 class="mb-4">Logowanie</h2>
+
+  @if (!isLoggedIn) {
+  <label for="email" class="form-label">Email:</label>
+  <input
+    class="form-control mb-4"
+    type="email"
+    id="email"
+    [(ngModel)]="email"
+    name="email"
+    required
+  />
+
+  <label for="password" class="form-label">Hasło:</label>
+  <input
+    class="form-control mb-4"
+    type="password"
+    id="password"
+    [(ngModel)]="password"
+    name="password"
+    required
+  />
+
+  <button class="btn btn-primary" type="submit">Zaloguj się</button>
+  }
+
+  <p>{{ message }}</p>
+</form>

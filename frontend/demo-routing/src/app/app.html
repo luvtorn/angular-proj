@@ -1,0 +1,84 @@
+<div class="container py-4">
+  <h1 class="mb-4 text-center">Portal szkolny</h1>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light rounded shadow-sm">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold text-primary" routerLink="/">🏫 Portal</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+          <li class="nav-item">
+            <a
+              routerLink="/"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              class="nav-link"
+            >
+              🏠 Strona Główna
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a
+              routerLink="/about"
+              routerLinkActive="active"
+              class="nav-link"
+            >
+              ℹ️ O nas
+            </a>
+          </li>
+
+          @if (!isLoggedIn) {
+            <li class="nav-item">
+              <a
+                routerLink="/register"
+                routerLinkActive="active"
+                class="nav-link"
+              >
+                📝 Rejestracja
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                routerLink="/login"
+                routerLinkActive="active"
+                class="nav-link"
+              >
+                🔐 Logowanie
+              </a>
+            </li>
+          }
+
+          @if (isLoggedIn) {
+            <li class="nav-item">
+              <a
+                routerLink="/dashboard"
+                routerLinkActive="active"
+                class="nav-link"
+              >
+                📊 Dashboard
+              </a>
+            </li>
+          }
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mt-4">
+    <router-outlet></router-outlet>
+  </div>
+</div>
