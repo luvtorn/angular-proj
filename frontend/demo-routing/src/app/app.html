@@ -18,7 +18,6 @@
 
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
           <li class="nav-item">
             <a
               routerLink="/"
@@ -30,49 +29,23 @@
             </a>
           </li>
 
+          @if (!isLoggedIn) {
           <li class="nav-item">
-            <a
-              routerLink="/about"
-              routerLinkActive="active"
-              class="nav-link"
-            >
-              ℹ️ O nas
+            <a routerLink="/register" routerLinkActive="active" class="nav-link">
+              📝 Rejestracja
             </a>
           </li>
-
-          @if (!isLoggedIn) {
-            <li class="nav-item">
-              <a
-                routerLink="/register"
-                routerLinkActive="active"
-                class="nav-link"
-              >
-                📝 Rejestracja
-              </a>
-            </li>
-            <li class="nav-item">
-              <a
-                routerLink="/login"
-                routerLinkActive="active"
-                class="nav-link"
-              >
-                🔐 Logowanie
-              </a>
-            </li>
+          <li class="nav-item">
+            <a routerLink="/login" routerLinkActive="active" class="nav-link"> 🔐 Logowanie </a>
+          </li>
+          } @if (isLoggedIn) {
+          <li class="nav-item">
+            <a routerLink="/about" routerLinkActive="active" class="nav-link"> ℹ️ O mnie </a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/dashboard" routerLinkActive="active" class="nav-link"> 📊 Dashboard </a>
+          </li>
           }
-
-          @if (isLoggedIn) {
-            <li class="nav-item">
-              <a
-                routerLink="/dashboard"
-                routerLinkActive="active"
-                class="nav-link"
-              >
-                📊 Dashboard
-              </a>
-            </li>
-          }
-
         </ul>
       </div>
     </div>

@@ -14,6 +14,9 @@ import { AuthService } from '../../services/auth.service';
 })
 export class Register {
   email = ''; password = ''; confirmPassword = ''; firstName = ''; lastName = ''; message = '';
+  phoneNumber = '';
+  description = '';
+  classLevel = '';
   constructor(private auth: AuthService, private router: Router) { }
 
   register() {
@@ -36,7 +39,10 @@ export class Register {
       email: this.email,
       password: this.password,
       firstName: this.firstName,
-      lastName: this.lastName
+      lastName: this.lastName,
+      phoneNumber: this.phoneNumber,
+      description: this.description,
+      classLevel: this.classLevel
     };
 
     this.auth.register(data).subscribe({

@@ -18,8 +18,17 @@ export class Login {
   constructor(private auth: AuthService, private router: Router) {}
 
   ngOnInit() {
-    const isAuth = !!localStorage.getItem('user');
-    this.isLoggedIn = isAuth;
+    this.auth.fetchUser().subscribe({
+      next: (res: any) => {
+        console.log(res);
+        if (res.loggedIn) {
+          this.router.navigate(['/dashboard']);
+          this.isLoggedIn = true;
+        } else {
+          this.isLoggedIn = false;
+        }
+      },
+    });
   }
 
   login() {
@@ -36,7 +45,6 @@ export class Login {
     this.auth.login(data).subscribe({
       next: (response) => {
         this.message = 'Logowanie zakończone sukcesem!';
-        localStorage.setItem('user', JSON.stringify(response.user));
         this.router.navigate(['/dashboard']);
         this.isLoggedIn = true;
       },

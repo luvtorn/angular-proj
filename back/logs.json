@@ -1,0 +1,8 @@
+[
+  {
+    "action": "CREATE_SUPERUSER",
+    "createdAt": "2025-11-14T18:57:57.712Z",
+    "email": "admin",
+    "generatedPassword": "93b030f66fd9"
+  }
+]

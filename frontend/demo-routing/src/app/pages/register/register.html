@@ -41,12 +41,27 @@
 
     <div class="mb-3">
       <label for="firstName" class="form-label">Imię</label>
-      <input id="firstName" name="firstName" class="form-control" [(ngModel)]="firstName" />
+      <input id="firstName" name="firstName" class="form-control" [(ngModel)]="firstName" required/>
     </div>
 
     <div class="mb-3">
       <label for="lastName" class="form-label">Nazwisko</label>
-      <input id="lastName" name="lastName" class="form-control" [(ngModel)]="lastName" />
+      <input id="lastName" name="lastName" class="form-control" [(ngModel)]="lastName" required/>
+    </div>
+
+    <div class="mb-3">
+      <label for="description" class="form-label">Opis</label>
+      <input id="description" name="description" class="form-control" [(ngModel)]="description" />
+    </div>
+
+    <div class="mb-3">
+      <label for="phoneNumber" class="form-label">Telefon</label>
+      <input id="phoneNumber" type="number" name="phoneNumber"  class="form-control" [(ngModel)]="phoneNumber" required/>
+    </div>
+
+    <div class="mb-3">
+      <label for="classLevel" class="form-label">Klasa</label>
+      <input id="classLevel" name="classLevel" class="form-control" [(ngModel)]="classLevel" required/>
     </div>
 
     <button type="submit" class="btn btn-primary">Zarejestruj</button>

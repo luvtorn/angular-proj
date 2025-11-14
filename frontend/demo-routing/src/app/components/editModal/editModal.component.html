@@ -1,0 +1,73 @@
+<div class="modal" [class.show]="isModalOpen" [style.display]="isModalOpen ? 'block' : 'none'">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Edytuj profil</h5>
+        <button type="button" class="btn-close" (click)="onClose()"></button>
+      </div>
+      <div class="modal-body">
+        <form (submit)="saveChanges()">
+          <div class="mb-3">
+            <label for="firstName" class="form-label">Imie</label>
+            <input
+              type="text"
+              id="firstName"
+              class="form-control"
+              name="firstName"
+              [(ngModel)]="formData.firstName"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="classLevel" class="form-label">Klasa</label>
+            <input
+              type="text"
+              id="classLevel"
+              class="form-control"
+              name="classLevel"
+              [(ngModel)]="formData.classLevel"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input
+              type="email"
+              id="email"
+              class="form-control"
+              name="email"
+              [(ngModel)]="formData.email"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="phone" class="form-label">Numer telefonu</label>
+            <input
+              type="number"
+              id="phone"
+              class="form-control"
+              name="phone"
+              [(ngModel)]="formData.phoneNumber"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="description" class="form-label">Opis</label>
+            <input
+              type="text"
+              id="description"
+              class="form-control"
+              name="description"
+              [(ngModel)]="formData.description"
+            />
+          </div>
+
+          <button type="submit" class="btn btn-primary">Save Changes</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" (click)="onClose()">Zamknij</button>
+      </div>
+    </div>
+  </div>
+</div>

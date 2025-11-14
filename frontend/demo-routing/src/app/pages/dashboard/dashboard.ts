@@ -12,19 +12,27 @@ export class Dashboard {
 
   constructor(private auth: AuthService, private router: Router) {}
 
-  user = JSON.parse(localStorage.getItem('user') || '"Guest"')
+  user: any = null
 
   ngOnInit() {
-    const isAuth = !!localStorage.getItem('user');
+    this.auth.fetchUser().subscribe({
+      next: (res: any) => {
+        if (!res.loggedIn) {
+          this.router.navigate(['/login']);
+          return;
+        }
 
-    if (!isAuth) {
-      this.router.navigate(['/login']);
-    }
+        this.user = { ...this.auth.user$ };
+
+      },
+      error: () => {
+        this.router.navigate(['/login']);
+      }
+    });
   }
 
   logout() {
     this.auth.logout().subscribe();
-    localStorage.removeItem('user');
     this.router.navigate(['/login']);
   }
 }
