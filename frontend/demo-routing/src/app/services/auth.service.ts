@@ -18,6 +18,10 @@ export class AuthService {
     return this.http.post(`${this.api}/logowanie`, data, { withCredentials: true });
   }
 
+  get userValue() {
+    return this._user$.value;
+  }
+
   updateUser(user: any) {
     this._user$.next(user);
   }
@@ -34,12 +38,11 @@ export class AuthService {
 
   editProfile(data: any, userId: string): Observable<any> {
     console.log('Editing profile for user ID:', userId);
-    return this.http.put(`${this.api}/users/${userId}`, data, { withCredentials: true })
-      .pipe(
-        tap((res: any) => {
-          this.updateUser(res.user);
-        })
-      );
+    return this.http.put(`${this.api}/users/${userId}`, data, { withCredentials: true }).pipe(
+      tap((res: any) => {
+        this.updateUser(res.user);
+      })
+    );
   }
 
   fetchUser() {

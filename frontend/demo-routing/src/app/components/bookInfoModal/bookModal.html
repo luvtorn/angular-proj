@@ -1,0 +1,38 @@
+<div
+  class="modal fade"
+  [class.show]="isModalOpen"
+  [style.display]="isModalOpen ? 'block' : 'none'"
+  tabindex="-1"
+>
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title">{{ book?.title }}</h5>
+        <button type="button" class="btn-close" aria-label="Close" (click)="onClose()"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-4 text-center">
+            <img [src]="book?.thumbnailUrl" class="img-fluid rounded" alt="{{ book?.title }}" />
+          </div>
+          <div class="col-md-8">
+            <p><strong>Authors:</strong> {{ book?.authors.join(', ') }}</p>
+            <p><strong>Categories:</strong> {{ book?.categories.join(', ') }}</p>
+            <p><strong>ISBN:</strong> {{ book?.isbn }}</p>
+            <p><strong>Pages:</strong> {{ book?.pageCount }}</p>
+            <p><strong>Published:</strong> {{ book?.publishedDate }}</p>
+            <p>
+              <strong>Status:</strong> <span>  </span> <span class="badge bg-success">{{ book?.status }}</span>
+            </p>
+            <hr />
+            <p><strong>Description:</strong></p>
+            <p>{{ book?.longDescription || book?.shortDescription }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="onClose()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

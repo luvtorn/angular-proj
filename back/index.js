@@ -3,7 +3,7 @@ const session = require("express-session");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 require("dotenv").config();
-const routes = require("./routes");
+const userRoutes = require("./routes/user-routes");
 const { connectDB, testConnection } = require("./db");
 const { createSuperAdmin } = require("./utils/createSuperAdmin");
 
@@ -46,7 +46,8 @@ async function start() {
 });
 }
 
-app.use("/api", routes);
+app.use("/api", userRoutes);
+app.use("/books", require("./routes/books-routes"));
 
 start();
 

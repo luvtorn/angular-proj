@@ -1,7 +1,8 @@
 const express = require("express");
 const bcrypt = require("bcrypt");
-const { connectDB } = require("./db");
+const { connectDB } = require("../db");
 const { ObjectId } = require("mongodb");
+const editProfileMiddleware = require("../middlewares/editProfileMiddleware");
 require("dotenv").config();
 const app = express();
 
@@ -46,14 +47,26 @@ app.post("/rejestracja", async (req, res) => {
   }
 });
 
-app.put("/users/:id", async (req, res) => {
+app.put("/users/:id", editProfileMiddleware, async (req, res) => {
   try {
     const { id } = req.params;
     const updateData = req.body;
 
-    console.log(id);
+    if(req.session.user._id !== id){
+      return  res.status(403).json({ message: "Nie masz uprawnień do edycji tego profilu." });
+    }
 
     const db = await connectDB();
+
+    for (let key in updateData) {
+      if (
+        updateData[key] === "" ||
+        updateData[key] === null ||
+        updateData[key] === undefined
+      ) {
+        delete updateData[key];
+      }
+    }
 
     const result = await db
       .collection("users")
